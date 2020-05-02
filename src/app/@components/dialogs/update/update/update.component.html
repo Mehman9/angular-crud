@@ -1,0 +1,32 @@
+<div class="example-container">
+    <h3>Edit</h3>
+    <form [formGroup]="formGroup"  (click)="userUpdate()">
+    <mat-form-field>
+      <input matInput placeholder="First Name" formControlName = "first_name" />
+      <mat-error *ngIf="formGroup.controls['first_name'].invalid">
+        {{ getError("firstname") }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Last Name" formControlName = "last_name" />
+      <mat-error *ngIf="formGroup.controls['last_name'].invalid">
+        {{ getError("last_name") }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Email" formControlName = "email"/>
+      <mat-error *ngIf="formGroup.controls['email'].invalid">
+        {{ getError("email") }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Country" formControlName = "country"/>
+      <mat-error *ngIf="formGroup.controls['country'].invalid">
+        {{ getError("country") }}
+      </mat-error>
+    </mat-form-field>
+    <div mat-dialog-actions>
+    <button mat-flat-button color="primary" type="submit" [disabled] = "!formGroup.valid" >Edit</button>
+  </div>
+</form>
+  </div>

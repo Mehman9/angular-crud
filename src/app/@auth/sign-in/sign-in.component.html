@@ -1,0 +1,36 @@
+<div class="login">
+  <h1>Sign in</h1>
+  <form class="form" [formGroup]="formGroup">
+    <mat-form-field class="mt-5">
+      <input matInput placeholder="Enter username" formControlName="email" />
+
+      <mat-error *ngIf="formGroup.controls['email'].invalid">
+        {{ getError("email") }}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Enter password"
+        formControlName="password"
+        [attr.type]="hide ? 'password' : 'text'"
+      />
+      <mat-error *ngIf="formGroup.controls['password'].invalid">{{
+        getError("password")
+      }}</mat-error>
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click) = "login()">
+      Sign in
+    </button>
+  </form>
+</div>
