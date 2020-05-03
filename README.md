@@ -4,7 +4,7 @@
 
 # Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3 and UI with [Angular Material](https://material.angular.io/) version 9.2.1
 
 
 ## Development server
