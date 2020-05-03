@@ -20,19 +20,19 @@ export class UpdateComponent implements OnInit {
     public dialogRef: MatDialogRef<UpdateComponent>,
     @Inject(MAT_DIALOG_DATA) public data: User,
     private userService: UsersService,
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.createForm();
   }
   createForm() {
     this.formGroup = this.fb.group({
-      id: [Date.now()],
-      first_name: ['', [Validators.required]],
-      last_name: ['', [Validators.required,]],
-      email: ['', [Validators.required, Validators.email]],
-      country: ['', [Validators.required]],
-
+      id: [this.data.id],
+      first_name: [this.data.first_name, [Validators.required]],
+      last_name: [this.data.last_name, [Validators.required,]],
+      email: [this.data.email, [Validators.required, Validators.email]],
+      country: [this.data.country, [Validators.required]],
     });
   }
 

@@ -8,6 +8,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon'; 
 import {MatButtonModule} from '@angular/material/button'; 
 import {MatCheckboxModule} from '@angular/material/checkbox'; 
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -27,6 +29,7 @@ const MAT_MODULES =  [
         AuthRoutingModule,
         FormsModule,
         ReactiveFormsModule,
+        HttpClientModule,
         ...MAT_MODULES
         
     ],
@@ -35,6 +38,7 @@ const MAT_MODULES =  [
     declarations: [
        SignInComponent
     ],
+   
 
 })
 export class AuthModule {}

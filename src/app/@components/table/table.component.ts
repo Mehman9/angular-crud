@@ -54,12 +54,10 @@ export class TableComponent implements OnInit {
       dialogRef.close();
     });
   }
-  editDialog(): void {
+  editDialog(e: User): void {
     const dialogRef = this.dialog.open(UpdateComponent, {
       width: '250px',
-      data: {
-
-      }
+      data: e,
     })
     dialogRef.componentInstance.submitted.subscribe(user => {
       const updatedIndex = this.users.findIndex(x => x.first_name === user.first_name);

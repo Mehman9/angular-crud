@@ -23,6 +23,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { UserFilterPipe } from './@core/pipes/user-filter.pipe';
 import { DialogComponent } from './@components/dialogs/add/dialog.component';
 import { UpdateComponent } from './@components/dialogs/update/update/update.component';
+import { AuthService } from './@auth/auth.service';
+import { AuthGuard } from './@auth/auth.guard';
 
 
 
@@ -49,12 +51,7 @@ const MAT_MODULES =  [
     TableComponent,
     DialogComponent,
     UserFilterPipe,
-    UpdateComponent,
-
-    
-
-
-
+    UpdateComponent
   
   ],
   imports: [
@@ -69,7 +66,7 @@ const MAT_MODULES =  [
     
 
   ],
-  providers: [],
+  providers: [AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

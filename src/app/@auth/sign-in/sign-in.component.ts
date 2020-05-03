@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
+import { Auth } from '../auth';
 
 
 @Component({
@@ -17,7 +19,8 @@ export class SignInComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private authService:AuthService
  
     ) { }
 
@@ -26,17 +29,26 @@ export class SignInComponent implements OnInit {
     this.createForm();
   }
 
+
+
+ 
+
+  login(){
+  this.authService.login(this.formGroup.value);
+  }
+
+
   createForm() {
     this.formGroup = this.fb.group({
-      email: ['', [Validators.required,Validators.email]],
+      userEmail: ['', [Validators.required,Validators.email]],
       password: ['', [Validators.required]]
     });
   }
 
   getError(el) {
     switch (el) {
-      case 'email':
-        if (this.formGroup.get('email').hasError('required')) {
+      case 'userEmail':
+        if (this.formGroup.get('userEmail').hasError('required')) {
           return 'Email is required';
         }
         break;
@@ -50,10 +62,6 @@ export class SignInComponent implements OnInit {
     }
 
 
-  }
-
-  login(){
-    this.router.navigate(['/dashboard'])
   }
 
 }

@@ -25,11 +25,9 @@ export class UsersService {
 
   }
   updateUser(model: User): Observable<any> {
-    return this.http.put<any>(`${environment.apiUrl}/users/${model.id}`, model, { 
-      
-      'headers': new HttpHeaders({'Content-Type': 'application/json'})
-    
-    })
+    const headers = { 'content-type': 'application/json' }
+    const body = JSON.stringify(model);
+    return this.http.put(`${environment.apiUrl}/users/${model.id}`, body, { 'headers': headers })
 
   }
 

@@ -1,8 +1,8 @@
 <div class="example-container">
     <h3>Edit</h3>
-    <form [formGroup]="formGroup"  (click)="userUpdate()">
+    <form [formGroup]="formGroup"  (ngSubmit)="userUpdate()">
     <mat-form-field>
-      <input matInput placeholder="First Name" formControlName = "first_name" />
+      <input matInput placeholder="First Name" formControlName = "first_name"  />
       <mat-error *ngIf="formGroup.controls['first_name'].invalid">
         {{ getError("firstname") }}
       </mat-error>
@@ -14,13 +14,13 @@
       </mat-error>
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Email" formControlName = "email"/>
+      <input matInput placeholder="Email" formControlName = "email" />
       <mat-error *ngIf="formGroup.controls['email'].invalid">
         {{ getError("email") }}
       </mat-error>
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Country" formControlName = "country"/>
+      <input matInput placeholder="Country" formControlName = "country" />
       <mat-error *ngIf="formGroup.controls['country'].invalid">
         {{ getError("country") }}
       </mat-error>

@@ -1,10 +1,12 @@
 .login{
-    width:350px; 
+    width:400px;
     box-shadow:0 30px 80px rgba(0,0,0,.2);
-    border-radius: 10px;
-    padding: 1rem;
+    border-radius: 20px;
+    padding: 2rem;
     margin:auto;
     margin-top:200px;
+    
+    
 
     h1{
         text-align: center;
@@ -21,4 +23,8 @@
   }
   .form > * {
     width: 100%;
+  }
+
+  .btn{
+    margin-top:30px;
   }
